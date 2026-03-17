@@ -1,0 +1,8 @@
+future==1.0.0
+iso8601==2.1.0
+minimalmodbus==2.1.1
+portalocker==3.2.0
+pyserial==3.5
+pywin32==311
+PyYAML==6.0.3
+serial==0.0.97
