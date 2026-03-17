@@ -1,0 +1,32 @@
+# Entornos Virtuales (¡Lo más importante!)
+venv/
+.venv/
+env/
+ENV/
+bin/
+lib/
+include/
+Scripts/
+pyvenv.cfg
+
+# Archivos compilados de Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribución / Paquetes
+dist/
+build/
+*.egg-info/
+
+# Archivos de configuración y secretos (Variables de entorno)
+.env
+.flaskenv
+
+# IDEs (VS Code, PyCharm)
+.vscode/
+.idea/
+
+# Archivos específicos de Sistema Operativo
+.DS_Store
+Thumbs.db
