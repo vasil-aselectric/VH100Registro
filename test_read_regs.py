@@ -13,4 +13,4 @@ registros = {7425: "d-00.00 = Frecuencia de referencia pantalla",
 
 for addr, desc in registros.items():
     value = read_reg(inst, addr)
-    print(f"{addr} | {value} | {desc}")
+    print(f"Rerstro decimal: {addr} | Valor actual: {value} | Descripción: {desc}")
