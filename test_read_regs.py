@@ -11,6 +11,6 @@ registros = {7425: "d-00.00 = Frecuencia de referencia pantalla",
              
              }
 
-for addr in [7425, 27392, 27393, 27394, 27395]:
-    value = read_reg(inst, registros[addr].split(" = ")[0].split(".")[1])
-    print(addr, value)
+for addr, desc in registros.items():
+    value = read_reg(inst, addr)
+    print(f"{addr} | {value} | {desc}")
