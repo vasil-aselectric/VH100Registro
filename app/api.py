@@ -11,6 +11,8 @@ from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 
+from app.inverter_writer import write_config_to_vfd
+
 
 # =========================
 # RUTAS PROYECTO
@@ -277,6 +279,41 @@ def select_inverter(payload: InverterSelection) -> Dict[str, Any]:
 
 @app.post("/api/v1/inverter/apply")
 def apply_inverter_config(payload: InverterSelection) -> Dict[str, Any]:
+    try:
+        catalog = load_catalog()
+
+        resolved_config = build_resolved_config(
+            catalog=catalog,
+            use_type=payload.use_type,
+            phase_type=payload.phase_type,
+            power_code=payload.power_code,
+        )
+
+        variant_code = build_variant_code(
+            use_type=payload.use_type,
+            phase_type=payload.phase_type,
+            power_code=payload.power_code,
+        )
+
+        write_result = write_config_to_vfd(resolved_config)
+
+        return {
+            "ok": write_result["ok"],
+            "variant_code": variant_code,
+            "selection": payload.model_dump(),
+            "resolved_config_name": resolved_config.get("name"),
+            "write_summary": {
+                "total": write_result["total"],
+                "ok_count": write_result["ok_count"],
+                "error_count": write_result["error_count"],
+            },
+            "results": write_result["results"],
+        }
+
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e))
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
     """
     Endpoint reservado para el siguiente paso:
     - construir resolved_config

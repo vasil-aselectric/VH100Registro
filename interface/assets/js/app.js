@@ -1,4 +1,4 @@
-import { fetchCatalog, getUseTypes, getPhaseTypes, getPowerCodes, makePayload, getLabel } from "./catalog.js";
+import { fetchCatalog, getUseTypes, getPhaseTypes, getPowerCodesByPhase, makePayload, getLabel } from "./catalog.js";
 import { submitSelection } from "./api.js";
 
 const elements = {
@@ -92,7 +92,7 @@ function handlePhaseTypeChange() {
 
   if (!elements.phaseType.value) return;
 
-  fillSelect(elements.powerCode, getPowerCodes(catalog));
+  fillSelect(elements.powerCode, getPowerCodesByPhase(elements.phaseType.value));
   elements.powerCode.disabled = false;
 }
 

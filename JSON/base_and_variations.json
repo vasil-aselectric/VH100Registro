@@ -2,7 +2,11 @@
   "metadata": {
     "family": "HV100",
     "application": "PIP",
-    "description": "Configurador variadores HV100 PIP (hibrido / clasico)"
+    "description": "Configurador variadores HV100 PIP (hibrido / clasico)",
+    "catalog_map": {
+      "monofasico": ["201MH", "202MH", "203MH", "204MH"],
+      "trifasico": ["401TH", "402TH", "403TH", "404TH", "405TH", "406TH", "407TH", "408TH", "409TH"]
+}
   },
 
   "base": {

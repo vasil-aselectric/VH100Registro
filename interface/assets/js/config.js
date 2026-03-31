@@ -3,7 +3,8 @@ export const UI_CONFIG = {
   catalogUrl: "/JSON/base_and_variations.json",
 
   // Endpoint FastAPI para aplicar o resolver selección
-  submitUrl: "/api/v1/inverter/select",
+ // submitUrl: "/api/v1/inverter/select",
+  submitUrl: "/api/v1/inverter/apply",
 
   requestMethod: "POST"
 };
