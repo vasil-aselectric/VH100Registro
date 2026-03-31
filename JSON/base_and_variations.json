@@ -1,0 +1,544 @@
+{
+  "metadata": {
+    "family": "HV100",
+    "application": "PIP",
+    "description": "Configurador variadores HV100 PIP (hibrido / clasico)"
+  },
+
+  "base": {
+    "groups": [
+      {
+        "group_section": "CONFIG INICIAL NO MODIFICAR",
+        "params": [
+          {
+            "param": "00.01",
+            "value": null,
+            "address_decimal": 24577,
+            "others": "SEGUN USO",
+            "description": "MACRO",
+            "editable": false
+          },
+          {
+            "param": "00.03",
+            "value": null,
+            "address_decimal": 24579,
+            "others": "EXTERNO",
+            "description": "TIPO DE CONTROL RUN",
+            "editable": false
+          },
+          {
+            "param": "00.04",
+            "value": 10,
+            "address_decimal": 24580,
+            "others": "MPPT",
+            "description": "FUENTE FRECUENCIA A",
+            "editable": false
+          },
+          {
+            "param": "00.05",
+            "value": 8,
+            "address_decimal": 24581,
+            "others": "PID",
+            "description": "FUENTE FRECUENCIA B",
+            "editable": false
+          },
+          {
+            "param": "00.06",
+            "value": 5,
+            "address_decimal": 24582,
+            "others": "MIN",
+            "description": "FUENTE DE FRECUENCIA DADA",
+            "editable": false
+          },
+          {
+            "param": "00.13",
+            "value": 50.0,
+            "address_decimal": 24589,
+            "others": "Hz",
+            "description": "FRECUENCIA LIMITE SUPERIOR",
+            "editable": false
+          },
+          {
+            "param": "00.12",
+            "value": 50.0,
+            "address_decimal": 24588,
+            "others": "Hz",
+            "description": "FRECUENCIA MAXIMA",
+            "editable": false
+          },
+          {
+            "param": "00.14",
+            "value": 0.0,
+            "address_decimal": 24590,
+            "others": "Hz",
+            "description": "FRECUENCIA MINIMA",
+            "editable": false
+          },
+          {
+            "param": "00.16",
+            "value": 60.0,
+            "address_decimal": 24592,
+            "others": "Seg",
+            "description": "ACELERACION 1",
+            "editable": false
+          },
+          {
+            "param": "00.17",
+            "value": 1.2,
+            "address_decimal": 24593,
+            "others": "Seg",
+            "description": "DECELERACION 1",
+            "editable": false
+          },
+          {
+            "param": "01.08",
+            "value": 1,
+            "address_decimal": 24840,
+            "others": "",
+            "description": "RAMPA APAGADO",
+            "editable": false
+          }
+        ]
+      },
+
+      {
+        "group_section": "DATOS DEL MOTOR",
+        "params": [
+          {
+            "param": "02.01",
+            "value": null,
+            "address_decimal": 25089,
+            "others": "KW SEGUN POTENCIA",
+            "description": "POTENCIA NOMINAL",
+            "editable": true
+          },
+          {
+            "param": "02.02",
+            "value": 50.0,
+            "address_decimal": 25090,
+            "others": "Hz",
+            "description": "RANGO DE FRECUENCIA NOMINAL",
+            "editable": true
+          },
+          {
+            "param": "02.03",
+            "value": 2820,
+            "address_decimal": 25091,
+            "others": "RPM",
+            "description": "VELOCIDAD",
+            "editable": true
+          },
+          {
+            "param": "02.04",
+            "value": null,
+            "address_decimal": 25092,
+            "others": "V SEGUN ALIMENTACION",
+            "description": "VOLTAJE NOMINAL",
+            "editable": true
+          },
+          {
+            "param": "02.05",
+            "value": null,
+            "address_decimal": 25093,
+            "others": "A SEGUN POTENCIA",
+            "description": "INTENSIDAD NOMINAL",
+            "editable": true
+          }
+        ]
+      },
+
+      {
+        "group_section": "SEÑALES",
+        "params": [
+          {
+            "param": "06.36",
+            "value": 100,
+            "address_decimal": 26148,
+            "others": "4-20mA",
+            "description": "TIPO DE ENTRADA ANALOGICA AI1, AI2",
+            "editable": false
+          },
+          {
+            "param": "07.02",
+            "value": 0,
+            "address_decimal": 26370,
+            "others": "DI3",
+            "description": "PARADA POR FALTA DE AGUA NC",
+            "editable": false
+          },
+          {
+          "param": "07.03",
+          "value": 0,
+          "address_decimal": 26371,
+          "others": "",
+          "description": "ENTRADA DIGITAL AUTO",
+          "editable": false
+          },
+          {
+          "param": "07.04",
+          "value": 0,
+          "address_decimal": 26372,
+          "others": "",
+          "description": "ENTRADA DIGITAL PROGRAMADOR",
+          "editable": false
+        },
+        {
+          "param": "07.05",
+          "value": 0,
+          "address_decimal": 26373,
+          "others": "",
+          "description": "ENTRADA DIGITAL RELÉ FASES",
+          "editable": false
+        },
+        {
+          "param": "07.06",
+          "value": 10,
+          "address_decimal": 26374,
+          "others": "",
+          "description": "ENTRADA DIGITAL PARADA SEGURA",
+          "editable": false
+        },
+        {
+          "param": "07.20",
+          "value": 1,
+          "address_decimal": 26388,
+          "others": "RUN",
+          "description": "SALIDA RELÉ 1",
+          "editable": false
+        },
+        {
+          "param": "07.21",
+          "value": 3,
+          "address_decimal": 26389,
+          "others": "FALLO",
+          "description": "SALIDA RELÉ 2",
+          "editable": false
+        }
+        ]
+      },
+{
+      "group_section": "AJUSTES PID",
+      "params": [
+        {
+          "param": "08.01",
+          "value": 5,
+          "address_decimal": 26625,
+          "others": "Bares",
+          "description": "FUENTE DE CONSIGNA",
+          "editable": true
+        },
+        {
+          "param": "08.10",
+          "value": 36.0,
+          "address_decimal": 26634,
+          "others": "Hz",
+          "description": "FRECUENCIA FORZADA DESPERTAR",
+          "editable": true
+        },
+        {
+          "param": "08.17",
+          "value": 10,
+          "address_decimal": 26641,
+          "others": "Seg",
+          "description": "TIEMPO PARA DORMIR",
+          "editable": true
+        },
+        {
+          "param": "08.18",
+          "value": 2,
+          "address_decimal": 26642,
+          "others": "Seg",
+          "description": "TIEMPO PARA DESPERTAR",
+          "editable": true
+        },
+        {
+          "param": "08.24",
+          "value": 31.0,
+          "address_decimal": 26648,
+          "others": "Hz",
+          "description": "FRECUENCIA DORMIR",
+          "editable": true
+        }
+      ]
+    },
+      {
+        "group_section": "AJUSTES SEGURIDAD",
+        "params": [
+          {
+            "param": "10.00",
+            "value": 111,
+            "address_decimal": 27136,
+            "others": "",
+            "description": "AJUSTES PROTECCION TERMICA",
+            "editable": true
+          },
+          {
+            "param": "10.01",
+            "value": null,
+            "address_decimal": 27137,
+            "others": "% SEGUN ALIMENTACION",
+            "description": "COEFICIENTE DE PROTECCION",
+            "editable": true
+          },
+            {
+          "param": "10.02",
+          "value": 1,
+          "address_decimal": 27138,
+          "others": "ACTIVO",
+          "description": "PROTECCION BAJO VOLTAJE",
+          "editable": true
+          }
+          ]},
+          {
+           "params": [
+          {
+            "param": "10.03",
+            "value": null,
+            "address_decimal": 27139,
+            "others": "VDC SEGUN ALIMENTACION",
+            "description": "VOLTAJE DE PROTECCION",
+            "editable": true
+          },
+        
+          {
+            "param": "10.04",
+            "value": null,
+            "address_decimal": 27140,
+            "others": "VDC SEGUN ALIMENTACION",
+            "description": "LIMITE SUPERIOR TENSION",
+            "editable": true
+          }
+        ]},
+        {
+            "params": [
+              {
+          "param": "10.05",
+          "value": 0,
+          "address_decimal": 27141,
+          "others": "",
+          "description": "PROTECCION DECELERACION",
+          "editable": true
+        },
+        {
+          "param": "10.20",
+          "value": 3,
+          "address_decimal": 27156,
+          "others": "ACTIVO",
+          "description": "DESCONEXION DEL TRADUCTOR 4-20",
+          "editable": true
+        },
+        {
+          "param": "10.21",
+          "value": 0.1,
+          "address_decimal": 27157,
+          "others": "%",
+          "description": "VALOR DE DESCONEXION TRADUC.",
+          "editable": true
+        },
+        {
+          "param": "10.22",
+          "value": 5.0,
+          "address_decimal": 27158,
+          "others": "Seg",
+          "description": "TIEMPO DE DETECCION DE DESCONCT.",
+          "editable": true
+        }
+      ]
+    },
+    {
+      "group_section": "OTROS AJUSTES",
+      "params": [
+        {
+          "param": "12.04",
+          "value": 1,
+          "address_decimal": 27652,
+          "others": "",
+          "description": "ACTIVAR AUTOREINICIO",
+          "editable": true
+        },
+        {
+          "param": "12.05",
+          "value": 60.0,
+          "address_decimal": 27653,
+          "others": "",
+          "description": "DELAY REINICO AUTO",
+          "editable": true
+        },
+        {
+          "param": "12.06",
+          "value": 100,
+          "address_decimal": 27654,
+          "others": "ilimitado",
+          "description": "CANTIDAD DE REINICIOS",
+          "editable": true
+        },
+        {
+          "param": "12.07",
+          "value": 60.0,
+          "address_decimal": 27655,
+          "others": "",
+          "description": "DELAY ENTRE REINICIOS",
+          "editable": true
+        },
+        {
+          "param": "12.08",
+          "value": 0,
+          "address_decimal": 27656,
+          "others": "",
+          "description": "TIPO FAN COOLER",
+          "editable": true
+        },
+        {
+          "param": "15.07",
+          "value": 10.00,
+          "address_decimal": 24583,
+          "others": "Bar",
+          "description": "RANGO DEL TRADUCTOR",
+          "editable": true
+        },
+        {
+          "param": "15.08",
+          "value": 5,
+          "address_decimal": 24584,
+          "others": "Bares",
+          "description": "CONSIGNA",
+          "editable": true
+        }
+      ]
+    },
+      {
+        "group_section": "MPPT Y SUBCARGA",
+        "params": [
+           {
+          "param": "16.00",
+          "value": 15,
+          "address_decimal": 28672,
+          "others": "SEG",
+          "description": "TIEMPO DETEC SUB INTENSIDAD",
+          "editable": true
+        },
+        {
+          "param": "16.01",
+          "value": 180,
+          "address_decimal": 28673,
+          "others": "VDC",
+          "description": "MPPT REGULACION MIN",
+          "editable": true
+        },
+          {
+            "param": "16.02",
+            "value": null,
+            "address_decimal": 28674,
+            "others": "VDC SEGUN ALIMENTACION",
+            "description": "MPPT REGULACION MAX",
+            "editable": true
+          },
+           {
+          "param": "16.03",
+          "value": 50,
+          "address_decimal": 28675,
+          "others": "%",
+          "description": "RELACION SUBINTENSIDAD",
+          "editable": true
+        },
+        {
+          "param": "16.04",
+          "value": 30.0,
+          "address_decimal": 28676,
+          "others": "Hz",
+          "description": "FRECUENCIA MINIMA DE EFLUENTE",
+          "editable": true
+        }
+        ]
+      }
+    ]
+  },
+
+  "variations": {
+    "use_type": {
+      "hibrido_pip": [
+        {
+          "00.01": { "value": 1, "others": "PID" }
+        },
+        {
+          "00.01": { "value": 4, "others": "SOLAR" }
+        }
+      ],
+      "clasico_pip": {
+        "00.01": { "value": 1, "others": "PID" }
+      }
+    },
+
+    "phase_type": {
+      "monofasico": {
+        "02.04": { "value": 220 },
+        "10.03": { "value": 180 },
+        "10.04": { "value": 370 },
+        "16.01": { "value": 180 },
+        "16.02": { "value": 312 }
+      },
+      "trifasico": {
+        "02.04": { "value": 380 },
+        "10.03": { "value": 280 },
+        "10.04": { "value": 700 },
+        "16.01": { "value": 450 },
+        "16.02": { "value": 540 }
+      }
+    },
+
+    "power_kw": {
+      "201MH": {
+      "02.01": { "value": 0.75 },
+      "02.05": { "value": 4.2 }
+      },
+      "202MH": {
+        "02.01": { "value": 1.1 },
+        "02.05": { "value": 7.5 }
+      },
+      "203MH": {
+        "02.01": { "value": 1.5 },
+        "02.05": { "value": 10.0 }
+      },
+      "204MH": {
+        "02.01": { "value": 2.2 },
+        "02.05": { "value": 16.0 }
+      },
+      "401TH": {
+        "02.01": { "value": 1.1 },
+        "02.05": { "value": 4.2 }
+      },
+      "402TH": {
+        "02.01": { "value": 1.5 },
+        "02.05": { "value": 5.5 }
+      },
+      "403TH": {
+        "02.01": { "value": 3.0 },
+        "02.05": { "value": 8.5 }
+      },
+       "404TH": {
+        "02.01": { "value": 5.5 },
+        "02.05": { "value": 13.0 }
+      },
+       "405TH": {
+       "02.01": { "value": 7.5 },
+       "02.05": { "value": 18.0 }
+      },
+      "406TH": {
+       "02.01": { "value": 9.2 },
+       "02.05": { "value": 24.0 }
+      },
+      "407TH": {
+       "02.01": { "value": 11.0 },
+       "02.05": { "value": 32.0 }
+      },
+      "408TH": {
+       "02.01": { "value": 15.0 },
+       "02.05": { "value": 38.0 }
+      },
+      "409TH": {
+       "02.01": { "value": 18.5 },
+       "02.05": { "value": 45.0 }
+      }
+    }
+  }
+}

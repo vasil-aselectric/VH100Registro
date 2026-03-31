@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Selector HV100 PIP</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <main class="page-shell">
+    <header class="hero">
+      <div class="hero__text">
+        <p class="eyebrow">AS Electric · HV100</p>
+        <h1>Selector de variador PIP</h1>
+        <p class="lead">
+          Selecciona tipo de uso, alimentación y referencia de catálogo para
+          obtener la configuración final del variador.
+        </p>
+      </div>
+      <div class="hero__meta card">
+        <h2>Flujo</h2>
+        <ol>
+          <li>Elegir uso</li>
+          <li>Elegir alimentación</li>
+          <li>Elegir referencia</li>
+          <li>Enviar selección al backend</li>
+        </ol>
+      </div>
+    </header>
+
+    <section class="layout">
+      <section class="card">
+        <div class="section-title">
+          <h2>Formulario</h2>
+          <span id="catalogStatus" class="status-pill status-pill--loading">Cargando catálogo…</span>
+        </div>
+
+        <form id="selectorForm" class="selector-form" novalidate>
+          <div class="form-row">
+            <label for="useType">Tipo de uso</label>
+            <select id="useType" name="useType" disabled>
+              <option value="">Selecciona una opción</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <label for="phaseType">Tipo de alimentación</label>
+            <select id="phaseType" name="phaseType" disabled>
+              <option value="">Selecciona una opción</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <label for="powerCode">Referencia / potencia</label>
+            <select id="powerCode" name="powerCode" disabled>
+              <option value="">Selecciona una opción</option>
+            </select>
+          </div>
+
+          <div class="button-row">
+            <button type="submit" id="submitBtn" disabled>Enviar selección</button>
+            <button type="button" id="resetBtn" class="button-secondary">Reiniciar</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="card">
+        <div class="section-title">
+          <h2>Resumen de selección</h2>
+        </div>
+
+        <div id="selectionSummary" class="summary-grid">
+          <div class="summary-item">
+            <span class="summary-label">Uso</span>
+            <strong id="summaryUse">—</strong>
+          </div>
+          <div class="summary-item">
+            <span class="summary-label">Alimentación</span>
+            <strong id="summaryPhase">—</strong>
+          </div>
+          <div class="summary-item">
+            <span class="summary-label">Referencia</span>
+            <strong id="summaryPower">—</strong>
+          </div>
+          <div class="summary-item">
+            <span class="summary-label">Código final</span>
+            <strong id="summaryVariant">—</strong>
+          </div>
+        </div>
+
+        <div class="payload-block">
+          <div class="payload-block__header">
+            <h3>Payload</h3>
+            <button type="button" id="copyPayloadBtn" class="button-secondary button-small">Copiar</button>
+          </div>
+          <pre id="payloadPreview" class="code-block">{}</pre>
+        </div>
+
+        <div class="payload-block">
+          <div class="payload-block__header">
+            <h3>Respuesta backend</h3>
+            <span id="requestStatus" class="status-inline">Sin enviar</span>
+          </div>
+          <pre id="responsePreview" class="code-block">—</pre>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <script type="module" src="assets/js/app.js"></script>
+</body>
+</html>

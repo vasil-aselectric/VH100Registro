@@ -7,6 +7,7 @@ from app.conexion_hv100 import make_instrument, with_modbus_lock
 
 JSON_PATH = Path("JSON/config_hibrido_pid_202mh.json")
 
+
 # Si True, escribe solo los parámetros con editable=True
 # Si False, escribe todo lo seleccionado del JSON
 WRITE_ONLY_EDITABLE = False
