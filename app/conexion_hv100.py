@@ -3,10 +3,10 @@ import serial
 import portalocker
 
 # CONFIG HV100 (VIA WINDOWS) - NO TOCAR
-VFD_PORT = "COM8"
+#VFD_PORT = "COM8"
 
 # CONFIG HV100 (VIA RASPBERRYPI) - NO TOCAR
-# VFD_PORT = "/dev/ttyUSB3"
+VFD_PORT = "/dev/ttyUSB3"
 
 VFD_BAUD = 19200
 VFD_SLAVE_ID = 1
