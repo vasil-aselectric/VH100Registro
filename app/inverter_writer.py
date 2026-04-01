@@ -1,4 +1,4 @@
-from time import time
+import time
 from typing import Any, Dict, List
 
 from app.conexion_hv100 import make_instrument, with_modbus_lock
@@ -146,7 +146,6 @@ def write_config_to_vfd(config: Dict[str, Any]) -> Dict[str, Any]:
                 "group_section": row["group_section"],
                 "description": row["description"],
             })
-
         except Exception as e:
             results.append({
                 "param": param,
@@ -158,6 +157,14 @@ def write_config_to_vfd(config: Dict[str, Any]) -> Dict[str, Any]:
                 "group_section": row["group_section"],
                 "description": row["description"],
             })
+            time.sleep(0.05)
+            
+        finally:
+            try:
+                inst.serial.close()
+            except Exception:
+                pass
+
 
     ok_count = sum(1 for r in results if r["status"] == "OK")
     error_count = sum(1 for r in results if r["status"] == "ERROR")

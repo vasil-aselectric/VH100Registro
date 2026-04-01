@@ -36,6 +36,6 @@ def make_instrument() -> minimalmodbus.Instrument:
     inst.serial.timeout = 3
     inst.mode = minimalmodbus.MODE_RTU
     inst.clear_buffers_before_each_transaction = True
-    inst.close_port_after_each_call = True
+    inst.close_port_after_each_call = False
     inst.debug = False
     return inst
