@@ -1,3 +1,4 @@
+from time import time
 from typing import Any, Dict, List
 
 from app.conexion_hv100 import make_instrument, with_modbus_lock
@@ -126,9 +127,11 @@ def write_config_to_vfd(config: Dict[str, Any]) -> Dict[str, Any]:
 
         try:
             before_raw = read_raw_reg(inst, addr)
+            time.sleep(0.05)
             write_raw_reg(inst, addr, raw_to_write)
+            time.sleep(0.05)
             after_raw = read_raw_reg(inst, addr)
-
+            time.sleep(0.05)
             status = "OK" if after_raw == raw_to_write else "ERROR"
 
             results.append({

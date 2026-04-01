@@ -33,7 +33,7 @@ def make_instrument() -> minimalmodbus.Instrument:
     inst.serial.bytesize = 8
     inst.serial.parity = serial.PARITY_EVEN
     inst.serial.stopbits = 1
-    inst.serial.timeout = 2
+    inst.serial.timeout = 3
     inst.mode = minimalmodbus.MODE_RTU
     inst.clear_buffers_before_each_transaction = True
     inst.close_port_after_each_call = True
