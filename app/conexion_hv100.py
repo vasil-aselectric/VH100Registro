@@ -6,7 +6,11 @@ import portalocker
 # VFD_PORT = "COM8"
 
 # CONFIG HV100 (VIA RASPBERRYPI) - NO TOCAR
-VFD_PORT = "/dev/ttyUSB3"
+# En realidad no se debe usar este porque cada vez que se desconecta el teclado cambia por esto mira mas abajo
+#VFD_PORT = "/dev/ttyUSB3"
+
+# Este es el puerto valido sin teclado
+VFD_PORT = "/dev/serial/by-id/usb-1a86_USB_Serial-if00-port0"
 
 VFD_BAUD = 19200
 VFD_SLAVE_ID = 1
