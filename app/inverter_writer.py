@@ -4,8 +4,8 @@ from app.conexion_hv100 import make_instrument, with_modbus_lock
 
 
 PARAM_OVERRIDES = {
-    "06.36": lambda value: 100,
-    "10.00": lambda value: 111,
+    "06.36": lambda value: 256, # este valor hex -> 100 en decimal
+    "10.00": lambda value: 273, # este valor hex -> 273 en decimal
 }
 
 PARAM_DECIMALS = {

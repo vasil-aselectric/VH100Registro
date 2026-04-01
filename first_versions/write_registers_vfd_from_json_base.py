@@ -25,8 +25,8 @@ SKIP_PARAMS = {
 
 # Valores especiales que no siguen la regla normal de decimales
 PARAM_OVERRIDES = {
-    "06.36": lambda value: 100,
-    "10.00": lambda value: 111,
+    "06.36": lambda value: 256, # este valor hex -> 100 en decimal
+    "10.00": lambda value: 273, # este valor hex -> 273 en decimal
 }
 
 # Decimales por parámetro
@@ -51,7 +51,6 @@ PARAM_DECIMALS = {
     "10.22": 1,
     "12.05": 1,
     "12.07": 1,
-    "15.07": 2,
     "16.00": 0,
     "16.01": 0,
     "16.02": 0,

@@ -24,7 +24,7 @@
           },
           {
             "param": "00.03",
-            "value": null,
+            "value": 1,
             "address_decimal": 24579,
             "others": "EXTERNO",
             "description": "TIPO DE CONTROL RUN",
@@ -392,14 +392,7 @@
           "description": "TIPO FAN COOLER",
           "editable": true
         },
-        {
-          "param": "15.07",
-          "value": 10.00,
-          "address_decimal": 24583,
-          "others": "Bar",
-          "description": "RANGO DEL TRADUCTOR",
-          "editable": true
-        },
+       
         {
           "param": "15.08",
           "value": 5,
