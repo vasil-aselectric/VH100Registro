@@ -41,7 +41,7 @@ export function getLabel(type, value) {
 
 export function getPowerCodesByPhase(phaseType) {
   const mono = ["201MH", "202MH", "203MH", "204MH"];
-  const tri = ["401TH", "402TH", "403TH", "404TH", "405TH", "406TH", "407TH", "408TH", "409TH"];
+  const tri = ["401TH", "402TH", "403TH", "404TH", "405TH", "406TH", "407TH", "408TH", "409TH,", "413TH"];
 
   if (phaseType === "monofasico") return mono;
   if (phaseType === "trifasico") return tri;

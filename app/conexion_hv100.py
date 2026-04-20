@@ -3,14 +3,14 @@ import serial
 import portalocker
 
 # CONFIG HV100 (VIA WINDOWS) - NO TOCAR
-# VFD_PORT = "COM8"
+VFD_PORT = "COM8"
 
 # CONFIG HV100 (VIA RASPBERRYPI) - NO TOCAR
 # En realidad no se debe usar este porque cada vez que se desconecta el teclado cambia por esto mira mas abajo
 #VFD_PORT = "/dev/ttyUSB3"
 
 # Este es el puerto valido sin teclado
-VFD_PORT = "/dev/serial/by-id/usb-1a86_USB_Serial-if00-port0"
+# VFD_PORT = "/dev/serial/by-id/usb-1a86_USB_Serial-if00-port0"
 
 VFD_BAUD = 19200
 VFD_SLAVE_ID = 1
@@ -33,7 +33,8 @@ def make_instrument() -> minimalmodbus.Instrument:
     inst.serial.bytesize = 8
     inst.serial.parity = serial.PARITY_EVEN
     inst.serial.stopbits = 1
-    inst.serial.timeout = 3
+    inst.serial.timeout = 1
+    inst .serial.write_timeout = 1
     inst.mode = minimalmodbus.MODE_RTU
     inst.clear_buffers_before_each_transaction = True
     inst.close_port_after_each_call = False
