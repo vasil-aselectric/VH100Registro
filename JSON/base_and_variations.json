@@ -1,10 +1,10 @@
 {
   "metadata": {
     "family": "HV100",
-    "application": "PIP",
-    "description": "Configurador variadores HV100 PIP (hibrido / clasico)",
+    "application": "PID",
+    "description": "Configurador variadores HV100 PID (hibrido / clasico)",
     "catalog_map": {
-      "monofasico": ["201MH", "202MH", "203MH", "204MH"],
+      "monofasico": ["201MH", "202MH", "203MH", "204MH", "20MH"],
       "trifasico": ["401TH", "402TH", "403TH", "404TH", "405TH", "406TH", "407TH", "408TH", "409TH"]
 }
   },
@@ -80,7 +80,7 @@
           },
           {
             "param": "00.16",
-            "value": 60.0,
+            "value": 30.0,
             "address_decimal": 24592,
             "others": "Seg",
             "description": "ACELERACION 1",
@@ -200,6 +200,14 @@
           "address_decimal": 26374,
           "others": "",
           "description": "ENTRADA DIGITAL PARADA SEGURA",
+          "editable": false
+        },
+        {
+          "param": "07.09",
+          "value": 1,
+          "address_decimal": 26377,
+          "others": "",
+          "description": "ARRANQUE AUTOMATICO DIA SIGUIENTE",
           "editable": false
         },
         {
@@ -350,6 +358,43 @@
       ]
     },
     {
+      "group_section": "AJUSTES PANTALLA",
+      "params": [
+        {
+          "param": "14.07",
+          "value": null,
+          "address_decimal": 28167,
+          "others": "SEGUN TIPO DE USO",
+          "description": "EN MARCHA PRIMERA LINEA",
+          "editable": false
+        },
+        {
+          "param": "14.08",
+          "value": null,
+          "address_decimal": 28168,
+          "others": "SEGUN TIPO DE USO",
+          "description": "EN MARCHA SEGUNDA LINEA",
+          "editable": false
+        },
+        {
+          "param": "14.09",
+          "value": null,
+          "address_decimal": 28169,
+          "others": "SEGUN TIPO DE USO",
+          "description": "PARADO PRIMERA LINEA",
+          "editable": false
+        },
+        {
+          "param": "14.10",
+          "value": null,
+          "address_decimal": 28170,
+          "others": "SEGUN TIPO DE USO",
+          "description": "PARADO SEGUNDA LINEA",
+          "editable": false
+        }
+      ]
+    },
+    {
       "group_section": "OTROS AJUSTES",
       "params": [
         {
@@ -392,11 +437,11 @@
           "description": "TIPO FAN COOLER",
           "editable": true
         },
-       
+      
         {
           "param": "15.08",
-          "value": 5,
-          "address_decimal": 24584,
+          "value": 500,
+          "address_decimal": 28424,
           "others": "Bares",
           "description": "CONSIGNA",
           "editable": true
@@ -459,27 +504,57 @@
         },
         {
           "00.01": { "value": 4, "others": "SOLAR" }
+        },
+        {
+          "14.07": { "value": 0, "others": "EN MARCHA PRIMERA LINEA FRECUENCIA" }
+        },
+        {
+          "14.08": { "value": 12, "others": "EN MARCHA SEGUNDA LINEA TENSION DC" }
+        },
+        {
+          "14.09": { "value": 40, "others": "PARADO PRIMERA LINEA PRESION" }
+        },
+        {
+          "14.10": { "value": 12, "others": "PARADO SEGUNDA LINEA TENSION DC" }
         }
       ],
-      "clasico_pip": {
-        "00.01": { "value": 1, "others": "PID" }
-      }
+
+      "clasico_pip": [
+        {
+          "00.01": { "value": 1, "others": "PID" }
+        },
+        {
+          "00.04": { "value": 8, "others": "PID" }
+        },
+        {
+          "14.07": { "value": 0, "others": "EN MARCHA PRIMERA LINEA FRECUENCIA" }
+        },
+        {
+          "14.08": { "value": 40, "others": "EN MARCHA SEGUNDA LINEA TENSION DC" }
+        },
+        {
+          "14.09": { "value": 42, "others": "PARADO PRIMERA LINEA PRESION" }
+        },
+        {
+          "14.10": { "value": 40, "others": "PARADO SEGUNDA LINEA TENSION DC" }
+        }
+      ]
     },
 
     "phase_type": {
       "monofasico": {
         "02.04": { "value": 220 },
-        "10.03": { "value": 180 },
+        "10.03": { "value": 240 },
         "10.04": { "value": 370 },
-        "16.01": { "value": 180 },
-        "16.02": { "value": 312 }
+        "16.01": { "value": 250 },
+        "16.02": { "value": 315 }
       },
       "trifasico": {
         "02.04": { "value": 380 },
-        "10.03": { "value": 280 },
-        "10.04": { "value": 700 },
-        "16.01": { "value": 450 },
-        "16.02": { "value": 540 }
+        "10.03": { "value": 450 },
+        "10.04": { "value": 780 },
+        "16.01": { "value": 460 },
+        "16.02": { "value": 560 }
       }
     },
 
@@ -500,13 +575,17 @@
         "02.01": { "value": 2.2 },
         "02.05": { "value": 16.0 }
       },
+      "204T": {
+        "02.01": { "value": 4.0 },
+        "02.05": { "value": 16.0 }
+      },
       "401TH": {
         "02.01": { "value": 1.1 },
         "02.05": { "value": 4.2 }
       },
       "402TH": {
-        "02.01": { "value": 1.5 },
-        "02.05": { "value": 5.5 }
+        "02.01": { "value": 2.2 },
+        "02.05": { "value": 5.0 }
       },
       "403TH": {
         "02.01": { "value": 3.0 },
@@ -526,19 +605,35 @@
       },
       "407TH": {
        "02.01": { "value": 11.0 },
-       "02.05": { "value": 32.0 }
+       "02.05": { "value": 25.0 }
       },
       "408TH": {
        "02.01": { "value": 15.0 },
-       "02.05": { "value": 38.0 }
+       "02.05": { "value": 32.0 }
       },
       "409TH": {
-       "02.01": { "value": 18.5 },
+       "02.01": { "value": 22.0 },
        "02.05": { "value": 45.0 }
+      },
+       "410TH": {
+       "02.01": { "value": 30.0 },
+       "02.05": { "value": 60.0 }
+      },
+       "411TH": {
+       "02.01": { "value": 37.0 },
+       "02.05": { "value": 75.0 }
+      },
+       "412TH": {
+       "02.01": { "value": 45.0 },
+       "02.05": { "value": 91.0 }
       },
        "413TH": {
        "02.01": { "value": 55.0 },
-       "02.05": { "value": 112.0 }
+       "02.05": { "value": 110.0 }
+      },
+       "414TH": {
+       "02.01": { "value": 75.0 },
+       "02.05": { "value": 150.0 }
       }
     }
   }

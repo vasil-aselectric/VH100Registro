@@ -11,8 +11,8 @@ export const UI_CONFIG = {
 
 export const LABELS = {
   use_type: {
-    hibrido_pip: "Híbrido PIP",
-    clasico_pip: "Clásico PIP"
+    hibrido_pip: "Basic / Híbrido PID",
+    clasico_pip: "Solo PID"
   },
   phase_type: {
     monofasico: "Monofásico",
