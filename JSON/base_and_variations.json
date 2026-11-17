@@ -5,7 +5,7 @@
     "description": "Configurador variadores HV100 PID (hibrido / clasico)",
     "catalog_map": {
       "monofasico": ["201MH", "202MH", "203MH", "204MH", "20MH"],
-      "trifasico": ["401TH", "402TH", "403TH", "404TH", "405TH", "406TH", "407TH", "408TH", "409TH"]
+      "trifasico": ["401TH", "402TH", "403TH", "404TH", "405TH", "406TH", "407TH", "408TH", "409TH", "410TH", "411TH", "412TH", "413TH", "414TH", "415TH", "416TH"]
 }
   },
 
@@ -634,6 +634,14 @@
        "414TH": {
        "02.01": { "value": 75.0 },
        "02.05": { "value": 150.0 }
+      },
+       "415TH": {
+       "02.01": { "value": 90.0 },
+       "02.05": { "value": 176.0 }
+      },
+      "416TH": {
+       "02.01": { "value": 110.0 },
+       "02.05": { "value": 210.0 }
       }
     }
   }
